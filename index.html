@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Calculador 8890</title>
+</head>
+<body>
+    <main class="calculadorContainer">
+        <h1>Convenio 8890</h1>
+        <form action="" class="formulario" id="formulario-8890">
+            <div class="inputContainer">
+                <label for="codigoDeCargo">Codigo de Cargo</label>
+                <select name="codigoDeCargo" id="codigoDeCargo" class="input">
+                    <option value="c1">C1</option>
+                    <option value="c2">C2</option>
+                    <option value="c3">C3</option>
+                    <option value="c4">C4</option>
+                    <option value="c5">C5</option>
+                </select>
+            </div>
+            <div class="inputContainer">
+                <label for="antiguedad">Años de antiguedad</label>
+                <input type="number" name="antiguedad" id="antiguedad" class="input" placeholder="5">
+            </div>
+            <div class="inputContainer">
+                <label for="horasTrabajadas">Horas Trabajadas</label>
+                <input type="number" name="horasTrabajadas" id="horasTrabajadas" class="input" placeholder="45">
+            </div>
+            <h2>Bonificaciones</h2>
+            <div class="inputContainer">
+                <label for="bap">Bonificacion por asistencia y puntualidad (B.E.P.)</label>
+                <select name="bap" id="bap" class="input">
+                    <option value="true">si</option>
+                    <option value="false">no</option>
+                </select>
+            </div>
+            <div class="inputContainer">
+                <label for="tituloSecundario">Bonificacion por titulo secundario/superior</label>
+                <input type="number" name="tituloSecundario" id="tituloSecundario" class="input" placeholder="Cantidad de titulos">
+            </div>
+            <div class="inputContainer">
+                <label for="certificaciones">Bonificacion por Certificacion/Capacitación</label>
+                <input type="number" name="certificaciones" id="certificaciones" class="input" placeholder="Cantidad de certificaciones" >
+            </div>
+            <div class="inputContainer">
+                <label for="guarderia">Guardería</label>
+                <input type="number" name="guarderia" id="guarderia" class="input" placeholder="Cantidad de Guarderias">
+            </div>
+            <div class="inputContainer">
+                <label for="tareasDeRiesgo">Tareas Riesgosas</label>
+                <input type="number" name="tareasDeRiesgo" id="tareasDeRiesgo" class="input" placeholder="Cantidad de tareas de riesgo">
+            </div>
+            <h2>Descuentos</h2>
+            <div class="inputContainer">
+                <label for="vivienda">Vivienda</label>
+                <input type="number" name="vivienda" id="vivienda" class="input" placeholder="Cantidad de viviendas">
+            </div>
+            <div class="inputContainer">
+                <label for="desayuno">Desayuno</label>
+                <input type="number" name="desayuno" id="desayuno" class="input" placeholder="Cantidad de desayunos">
+            </div>
+            <div class="inputContainer">
+                <label for="almuerzo">Almuerzo</label>
+                <input type="number" name="almuerzo" id="almuerzo" class="input" placeholder="Cantidad de Almuerzos">
+            </div>
+            <div class="inputContainer">
+                <label for="merienda">Merienda</label>
+                <input type="number" name="merienda" id="merienda" class="input" placeholder="Cantidad de Meriendas">
+            </div>
+            <div class="inputContainer">
+                <label for="cena">Cena</label>
+                <input type="number" name="cena" id="cena" class="input" placeholder="Cantidad de Cenas">
+            </div>
+            <input type="submit" value="Enviar" class="submit">
+        </form>
+    </main>
+    <section id="resultado" class="result">
+
+    </section>
+
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 5vh 10vw;
+}
+.calculadorContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5vh;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+}
+
+.submit{
+    background-color: black;
+    color: white;
+    border: none;
+    border: 1px solid;
+    padding: 7px 0;
+    width: 80%;
+}
+.submit:hover{
+    transition: all 1s;
+    color: black;
+    background-color: white;
+}
+.input{
+    padding: 5px;
+    width: 100%;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2vh;
+}
+
+.result{
+    margin-top: 5vh;
+    display: flex;
+    gap: 3vw;
+}
