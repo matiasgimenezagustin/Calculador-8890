@@ -49,5 +49,10 @@ body{
 .result{
     margin-top: 5vh;
     display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+.result div{
+    display: flex;
     gap: 3vw;
 }

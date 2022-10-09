@@ -87,8 +87,18 @@ const calcularSueldoPorCategoria = ( resultado ) => {
             return calcularSueldo(categorias.categoria5, resultado)
     }
 }
-
-
+const calcularJubilacion = ( sueldoBruto ) =>{
+    return sueldoBruto * 0.11
+}
+const calcularLey19032 = ( sueldoBruto ) =>{
+    return sueldoBruto * 0.03
+}
+const calcularObraSocial = ( sueldoBruto ) =>{
+    return sueldoBruto * 0.03
+}
+const calcularAporteSolidario = ( sueldoBruto ) =>{
+    return sueldoBruto * 0.01
+}
 
 const formulario8890 = document.getElementById("formulario-8890")
 const contenedorResultado = document.getElementById("resultado")
@@ -97,7 +107,8 @@ formulario8890.addEventListener("submit", (e) =>{
     const {codigoDeCargo, antiguedad, horasTrabajadas, bap, tituloSecundario, certificaciones, guarderia, tareasDeRiesgo, vivienda, desayuno, almuerzo, merienda, cena} = formulario8890
 
     e.preventDefault()
-    console.log({ 
+
+    let sueldoBruto = parseInt(calcularSueldoPorCategoria({ 
         categoria: codigoDeCargo.value,
         antiguedad: parseFloat(antiguedad.value),
         horas: parseFloat(horasTrabajadas.value),
@@ -111,22 +122,16 @@ formulario8890.addEventListener("submit", (e) =>{
         almuerzo: parseFloat(almuerzo.value),
         merienda: parseFloat(merienda.value),
         cena: parseFloat(cena.value)
-    })
-    contenedorResultado.innerHTML = '<h3>sueldo final: </h3><p>' + parseInt(calcularSueldoPorCategoria({ 
-        categoria: codigoDeCargo.value,
-        antiguedad: parseFloat(antiguedad.value),
-        horas: parseFloat(horasTrabajadas.value),
-        bap: bap.value,
-        titulo: parseFloat(tituloSecundario.value),
-        certificaciones: parseFloat(certificaciones.value),
-        guarderia: parseFloat(guarderia.value),
-        tareasDeRiesgo: parseFloat(tareasDeRiesgo.value),
-        vivienda: parseFloat(vivienda.value),
-        desyuno: parseFloat(desayuno.value),
-        almuerzo: parseFloat(almuerzo.value),
-        merienda: parseFloat(merienda.value),
-        cena: parseFloat(cena.value)
-    })) + '</p>'
+    }))
+    let sueldoNeto = sueldoBruto - calcularJubilacion(sueldoBruto) - calcularLey19032(sueldoBruto) - calcularObraSocial(sueldoBruto) - calcularAporteSolidario(sueldoBruto);
+    contenedorResultado.innerHTML = `<div>
+                                        <h3>Sueldo Bruto: </h3>
+                                        <p>${sueldoBruto}</p>
+                                    </div>
+                                    <div>
+                                        <h3>Sueldo Neto: </h3>
+                                        <p>${sueldoNeto}</p>
+                                    </div>`
     
 })
 
